@@ -1,5 +1,6 @@
 # webapi-assessment
 
+### Note: After execute the project some data are generated and saved in the database
 ## Prerequisite
 - Install Postgres
 
