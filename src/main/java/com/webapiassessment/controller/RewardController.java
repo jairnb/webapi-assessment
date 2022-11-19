@@ -18,14 +18,14 @@ public class RewardController {
 
     private IRewardService rewardService;
 
-    @GetMapping("/{clientId}")
-    public ResponseEntity<?> findAllReward(@PathVariable Integer clientId){
-        return new ResponseEntity<>(rewardService.totalPerCustomer(clientId), HttpStatus.OK);
+    @GetMapping("/{customerId}")
+    public ResponseEntity<?> findAllReward(@PathVariable Integer customerId){
+        return new ResponseEntity<>(rewardService.totalPerCustomer(customerId), HttpStatus.OK);
     }
 
-    @GetMapping("/{clientId}/{month}")
-    public ResponseEntity<?> findMonthReward(@PathVariable Integer clientId, @PathVariable int month){
+    @GetMapping("/{customerId}/{month}")
+    public ResponseEntity<?> findMonthReward(@PathVariable Integer customerId, @PathVariable int month){
         Month m = Month.of(month);
-        return new ResponseEntity<>(rewardService.rewardByMonth(clientId, m), HttpStatus.OK);
+        return new ResponseEntity<>(rewardService.rewardByMonth(customerId, m), HttpStatus.OK);
     }
 }
